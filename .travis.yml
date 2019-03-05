@@ -23,5 +23,6 @@ script:
 after_success: |
   if [[ "$TRAVIS_RUST_VERSION" == nightly ]]; then
     # Uncomment the following line for coveralls.io
-    cargo tarpaulin --coveralls $TRAVIS_JOB_ID --debug
+    cargo tarpaulin --coveralls $TRAVIS_JOB_ID --debug &&
+    cat coveralls.json
   fi
