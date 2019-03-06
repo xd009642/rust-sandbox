@@ -13,16 +13,14 @@ matrix:
     - rust: nightly
 
 before_cache: |
-  if [[ "$TRAVIS_RUST_VERSION" == nightly ]]; then
     RUSTFLAGS="--cfg procmacro2_semver_exempt" cargo install cargo-tarpaulin -f --git https://github.com/xd009642/tarpaulin --branch coveralls-test
-  fi
+
 
 script:
 - cargo clean
 
 after_success: |
-  if [[ "$TRAVIS_RUST_VERSION" == nightly ]]; then
     # Uncomment the following line for coveralls.io
     cargo tarpaulin --coveralls $TRAVIS_JOB_ID --debug 
+    echo "Printing json"
     cat coveralls.json
-  fi
