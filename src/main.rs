@@ -1,5 +1,11 @@
-fn main() {
+
+
+fn say_hello() {
     println!("Hello, world!");
+}
+
+fn main() {
+    say_hello();
 }
 
 
@@ -7,4 +13,5 @@ fn main() {
 #[test]
 fn test() {
     println!("Running a test");
+    say_hello();
 }
