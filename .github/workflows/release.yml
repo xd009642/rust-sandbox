@@ -4,7 +4,7 @@ permissions:
 on:
   push:
     tags:
-      - '*.*.*'
+      - '[0-9]+.*'
 jobs:
   create-release:
     name: "Create GitHub release"
@@ -14,11 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: taiki-e/create-gh-release-action@v1.3.0
-        with:
-          prefix: "cargo-tarpaulin"
-          title: "$prefix $version"
-          branch: master
-          draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   upload-assets:
