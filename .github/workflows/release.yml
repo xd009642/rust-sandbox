@@ -16,7 +16,6 @@ jobs:
       - uses: taiki-e/create-gh-release-action@v1.3.0
         with:
           prefix: "cargo-tarpaulin"
-          changelog: "$prefix/CHANGELOG.md"
           title: "$prefix $version"
           branch: master
           draft: false
