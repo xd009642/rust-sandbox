@@ -6,6 +6,22 @@ on:
     tags:
       - '*.*.*'
 jobs:
+  create-release:
+    name: "Create GitHub release"
+    # only publish from the origin repository
+    if: github.repository_owner == 'xd009642'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: taiki-e/create-gh-release-action@v1.3.0
+        with:
+          prefix: "cargo-tarpaulin"
+          changelog: "$prefix/CHANGELOG.md"
+          title: "$prefix $version"
+          branch: master
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   upload-assets:
     name: "Upload release binaries"
     needs:
