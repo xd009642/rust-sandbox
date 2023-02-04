@@ -26,5 +26,6 @@ jobs:
       - name: coverage
         uses: xd009642/tarpaulin-gha@test
         with:
+          version: "0.25.0"
           target: ${{ matrix.toolchain}}
           args: '--engine llvm'
