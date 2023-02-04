@@ -24,7 +24,7 @@ jobs:
           toolchain: ${{ matrix.version }}
           override: true
       - name: coverage
-        uses: xd009642/tarpaulin-gha@test
+        uses: xd009642/tarpaulin-gha@test2
         with:
           version: "0.25.0"
           target: ${{ matrix.toolchain}}
