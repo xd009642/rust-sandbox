@@ -24,7 +24,7 @@ jobs:
           toolchain: ${{ matrix.version }}
           override: true
       - name: coverage
-      - uses: xd009642/cargo-tarpaulin
+        uses: xd009642/cargo-tarpaulin
         with:
           target: ${{ matrix.toolchain}}
           args: '--engine llvm'
