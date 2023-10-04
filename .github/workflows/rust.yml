@@ -18,6 +18,12 @@ jobs:
           - x86_64-unknown-linux-gnu
       fail-fast: false
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ matrix.version }}
+          override: true
+          components: rustfmt
       - name: code-coverage
         run: |
           cargo install cargo-tarpaulin --force --git https://github.com/xd009642/tarpaulin --branch feat/coveralls-update
