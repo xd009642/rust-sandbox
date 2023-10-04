@@ -29,3 +29,8 @@ jobs:
           version: "0.25.0"
           target: ${{ matrix.toolchain}}
           args: '--engine llvm'
+        run: cargo fmt -- --check
+      - name: code-coverage
+        run: |
+          cargo install cargo-tarpaulin --force --git https://github.com/xd009642/tarpaulin --branch feat/coveralls-update
+          cargo tarpaulin --coveralls ${{ secrets.COVERALLS_TOKEN }}
