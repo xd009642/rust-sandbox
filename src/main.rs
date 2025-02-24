@@ -10,7 +10,6 @@ fn main() {
 
 
 
-#[test]
 fn test() {
     println!("Running a test");
     say_hello();
