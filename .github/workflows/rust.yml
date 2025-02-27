@@ -26,5 +26,5 @@ jobs:
           components: rustfmt
       - name: code-coverage
         run: |
-          cargo install cargo-tarpaulin --force --git https://github.com/xd009642/tarpaulin 
+          cargo install cargo-tarpaulin --force --git https://github.com/xd009642/tarpaulin  --branch fix/coveralls-branch
           cargo tarpaulin --coveralls ${{ secrets.COVERALLS_TOKEN }}
