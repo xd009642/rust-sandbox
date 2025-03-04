@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - "*"
-  pull_request_target:
 env:
   RUST_BACKTRACE: 1
 
