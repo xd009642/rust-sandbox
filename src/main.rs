@@ -1,4 +1,7 @@
 
+fn oh_no() {
+    println!("ogh no");
+}
 
 fn say_hello() {
     println!("Hello, world!");
